@@ -37,7 +37,7 @@ require_once __DIR__ . '/includes/header.php';
                 <div class="agenda-item__body">
                     <div class="agenda-item__meta">
                         <?php if ($item['type']): ?><span class="badge badge-rood"><?= h($item['type']) ?></span><?php endif; ?>
-                        <?php if ($item['tijdstip']): ?><span class="agenda-item__tijd">🕐 <?= h($item['tijdstip']) ?></span><?php endif; ?>
+                        <?php if ($item['tijdstip']): ?><span class="agenda-item__tijd"><?= h($item['tijdstip']) ?></span><?php endif; ?>
                     </div>
                     <h3><?= h($item['titel']) ?></h3>
                     <?php if ($item['locatie']): ?><p class="agenda-item__locatie">📍 <?= h($item['locatie']) ?></p><?php endif; ?>
@@ -51,7 +51,7 @@ require_once __DIR__ . '/includes/header.php';
         </div>
         <?php else: ?>
         <div class="text-center" style="padding:4rem 0;">
-            <p style="font-size:2.5rem;margin-bottom:1rem;">📅</p>
+            <p style="font-size:2.5rem;margin-bottom:1rem;"></p>
             <h3>Geen aankomende evenementen</h3>
             <p style="color:var(--grijs-50);margin-bottom:1.5rem;">Er zijn momenteel geen activiteiten gepland. Kom binnenkort terug!</p>
             <a href="<?= SITE_URL ?>/contact.php" class="btn btn-primary">Contact opnemen</a>

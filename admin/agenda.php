@@ -12,7 +12,7 @@ if (isset($_GET['verwijder']) && is_numeric($_GET['verwijder'])) {
     redirect(SITE_URL . '/admin/agenda.php');
 }
 
-// Bewerken laden
+// Bewerken
 $bewerkItem = null;
 if (isset($_GET['bewerken']) && is_numeric($_GET['bewerken'])) {
     $stmt = db()->prepare("SELECT * FROM agenda WHERE id = ?");
@@ -20,7 +20,7 @@ if (isset($_GET['bewerken']) && is_numeric($_GET['bewerken'])) {
     $bewerkItem = $stmt->fetch();
 }
 
-// Opslaan (nieuw of bewerken)
+// Opslaan
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $bewerkId    = isset($_POST['id']) && is_numeric($_POST['id']) ? (int)$_POST['id'] : null;
     $titel       = trim($_POST['titel'] ?? '');
@@ -64,7 +64,7 @@ $maandAfk = ['','jan','feb','mrt','apr','mei','jun','jul','aug','sep','okt','nov
 
 <?php if ($succes): ?><div class="alert alert-succes">✓ <?= h($succes) ?></div><?php endif; ?>
 
-<!-- Formulier: nieuw of bewerken -->
+
 <?php if (isset($_GET['nieuw']) || $bewerkItem || $fout): ?>
 <div class="admin-kaart" style="border-top:3px solid var(--rood);margin-bottom:1.75rem;">
     <div class="admin-kaart__titel"><?= $bewerkItem ? 'Evenement bewerken' : 'Nieuw evenement' ?></div>
@@ -114,7 +114,7 @@ $maandAfk = ['','jan','feb','mrt','apr','mei','jun','jul','aug','sep','okt','nov
 </div>
 <?php endif; ?>
 
-<!-- Agenda lijst -->
+
 <div class="admin-tabel-wrap">
     <table class="admin-tabel">
         <thead>

@@ -22,7 +22,6 @@ if (!$artikel) {
 $pageTitle = $artikel['title'];
 $metaDesc  = $artikel['excerpt'];
 
-// Gerelateerde berichten
 $stmt = db()->prepare("SELECT * FROM news WHERE published = 1 AND id != ? ORDER BY published_at DESC LIMIT 3");
 $stmt->execute([$artikel['id']]);
 $gerelateerd = $stmt->fetchAll();
@@ -48,7 +47,7 @@ $gerelateerd = $stmt->fetchAll();
                 <img src="<?= h($artikel['image']) ?>" alt="<?= h($artikel['title']) ?>" class="artikel-img">
             <?php endif; ?>
             <div class="artikel-inhoud">
-                <?= $artikel['content'] /* Vertrouwde HTML uit database */ ?>
+                <?= $artikel['content'] ?>
             </div>
             <div style="margin-top:2.5rem;padding-top:1.5rem;border-top:2px solid var(--border);">
                 <a href="<?= SITE_URL ?>/nieuws.php" class="btn btn-secondary">← Terug naar nieuws</a>

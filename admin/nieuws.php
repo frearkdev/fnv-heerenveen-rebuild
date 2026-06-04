@@ -2,7 +2,7 @@
 $adminTitle = 'Nieuws beheren';
 require_once __DIR__ . '/includes/admin_header.php';
 
-// Verwijder actie
+
 if (isset($_GET['verwijder']) && is_numeric($_GET['verwijder'])) {
     $stmt = db()->prepare("DELETE FROM news WHERE id = ?");
     $stmt->execute([(int)$_GET['verwijder']]);

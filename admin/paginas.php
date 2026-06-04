@@ -5,7 +5,6 @@ require_once __DIR__ . '/includes/admin_header.php';
 $succes = flash('succes');
 $fout   = '';
 
-// Pagina laden om te bewerken
 $gekozen = null;
 if (isset($_GET['slug'])) {
     $stmt = db()->prepare("SELECT * FROM pages WHERE slug = ?");
@@ -13,7 +12,7 @@ if (isset($_GET['slug'])) {
     $gekozen = $stmt->fetch();
 }
 
-// Opslaan
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['slug'])) {
     $slug        = trim($_POST['slug']);
     $title       = trim($_POST['title'] ?? '');
@@ -30,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['slug'])) {
         flash('succes', 'Pagina opgeslagen!');
         redirect(SITE_URL . '/admin/paginas.php?slug=' . urlencode($slug));
     } else {
-        // Herlaad aangepaste versie
+      
         $gekozen = array_merge($gekozen ?? [], [
             'title' => $title, 'content' => $content,
             'meta_description' => $metaDesc, 'active' => $active, 'slug' => $slug
@@ -48,7 +47,7 @@ $paginas = db()->query("SELECT * FROM pages ORDER BY sort_order ASC")->fetchAll(
 
 <div class="paginas-layout">
 
-    <!-- Lijst met pagina's -->
+   
     <div class="paginas-lijst">
         <?php foreach ($paginas as $p): ?>
         <a href="?slug=<?= urlencode($p['slug']) ?>"
@@ -64,7 +63,7 @@ $paginas = db()->query("SELECT * FROM pages ORDER BY sort_order ASC")->fetchAll(
         <?php endforeach; ?>
     </div>
 
-    <!-- Editor -->
+    
     <?php if ($gekozen): ?>
     <div class="pagina-editor">
         <h3 style="margin-bottom:1.25rem;"><?= h($gekozen['title']) ?> bewerken</h3>

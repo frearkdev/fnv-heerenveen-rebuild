@@ -2,7 +2,7 @@
 $adminTitle = 'Dashboard';
 require_once __DIR__ . '/includes/admin_header.php';
 
-// Statistieken
+
 $stats = [
     'nieuws'   => db()->query("SELECT COUNT(*) FROM news")->fetchColumn(),
     'agenda'   => db()->query("SELECT COUNT(*) FROM agenda WHERE datum >= CURDATE()")->fetchColumn(),
@@ -10,37 +10,37 @@ $stats = [
     'berichten' => db()->query("SELECT COUNT(*) FROM contact_messages WHERE gelezen = 0")->fetchColumn(),
 ];
 
-// Recente nieuws
+
 $recentNieuws = db()->query("SELECT * FROM news ORDER BY created_at DESC LIMIT 5")->fetchAll();
 
-// Recente contactberichten
+
 $recentContact = db()->query("SELECT * FROM contact_messages ORDER BY created_at DESC LIMIT 5")->fetchAll();
 ?>
 
 <h1 class="admin-h1">Dashboard</h1>
 <p class="admin-sub">Welkom terug, <?= h($_SESSION['admin_naam'] ?? 'beheerder') ?>. Hier een overzicht van de website.</p>
 
-<!-- Statistieken -->
+
 <div class="dash-stats">
     <div class="stat-kaart">
-        <div class="stat-icoon stat-icoon--rood">📰</div>
+        <div class="stat-icoon stat-icoon--rood"></div>
         <div><strong><?= $stats['nieuws'] ?></strong><span>Nieuwsberichten</span></div>
     </div>
     <div class="stat-kaart">
-        <div class="stat-icoon stat-icoon--blauw">📅</div>
+        <div class="stat-icoon stat-icoon--blauw"></div>
         <div><strong><?= $stats['agenda'] ?></strong><span>Aankomende events</span></div>
     </div>
     <div class="stat-kaart">
-        <div class="stat-icoon stat-icoon--groen">📄</div>
+        <div class="stat-icoon stat-icoon--groen"></div>
         <div><strong><?= $stats['paginas'] ?></strong><span>Pagina's</span></div>
     </div>
     <div class="stat-kaart">
-        <div class="stat-icoon stat-icoon--geel">✉️</div>
+        <div class="stat-icoon stat-icoon--geel"></div>
         <div><strong><?= $stats['berichten'] ?></strong><span>Ongelezen berichten</span></div>
     </div>
 </div>
 
-<!-- Snelle acties -->
+
 <h2 class="admin-h1" style="font-size:1.15rem;margin-bottom:1rem;">Snelle acties</h2>
 <div class="dash-acties">
     <a href="<?= SITE_URL ?>/admin/nieuws-form.php" class="actie-kaart">
@@ -65,7 +65,7 @@ $recentContact = db()->query("SELECT * FROM contact_messages ORDER BY created_at
     </a>
 </div>
 
-<!-- Recente artikelen -->
+
 <h2 class="admin-h1" style="font-size:1.15rem;margin-bottom:1rem;">Recente nieuwsberichten</h2>
 <div class="admin-tabel-wrap">
     <table class="admin-tabel">
@@ -100,7 +100,7 @@ $recentContact = db()->query("SELECT * FROM contact_messages ORDER BY created_at
     </table>
 </div>
 
-<!-- Recente contactberichten -->
+
 <h2 class="admin-h1" style="font-size:1.15rem;margin:2rem 0 1rem;">Recente contactberichten</h2>
 <div class="admin-tabel-wrap">
     <table class="admin-tabel">

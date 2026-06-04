@@ -1,8 +1,4 @@
 <?php
-// ============================================
-// FNV Heerenveen - Environment first configuratie
-// Werkt lokaal, in Docker en in productie
-// ============================================
 
 function env(string $key, string $default = ''): string
 {
@@ -52,7 +48,7 @@ function db(): PDO
         } catch (PDOException $e) {
             die('<style>:root{--color-primary:#0897DD;--color-primary-dark:#067BB5;--color-surface:#FFFFFF;--color-primary-soft:#EAF5FB;}</style>
             <div style="font-family:sans-serif;padding:2rem;background:var(--color-primary-soft);border:2px solid var(--color-primary);border-radius:8px;margin:2rem;">
-                <h2 style="color:var(--color-primary-dark);">❌ Database verbindingsfout</h2>
+                <h2 style="color:var(--color-primary-dark);"> Database verbindingsfout</h2>
                 <p>Kan geen verbinding maken met de database. Controleer of:</p>
                 <ol>
                     <li>MySQL draait (lokaal of in Docker)</li>

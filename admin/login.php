@@ -1,7 +1,6 @@
 <?php
 require_once dirname(__DIR__) . '/includes/config.php';
 
-// Al ingelogd? Door naar dashboard
 if (isLoggedIn()) {
     redirect(SITE_URL . '/admin/dashboard.php');
 }
@@ -17,8 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$email]);
         $user = $stmt->fetch();
 
-        // Controleer wachtwoord (password_verify voor gehashte wachtwoorden)
-        // Voor de demo-seeder: het wachtwoord is opgeslagen als een bcrypt hash
         if ($user && (password_verify($wachtwoord, $user['password']) || $wachtwoord === 'Admin@FNV2024!')) {
             $_SESSION['admin_id']   = $user['id'];
             $_SESSION['admin_naam'] = $user['name'];

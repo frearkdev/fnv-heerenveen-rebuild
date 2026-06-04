@@ -11,7 +11,6 @@ if (isset($_GET['verwijder']) && is_numeric($_GET['verwijder'])) {
 
 $succes = flash('succes');
 
-// Enkel bericht bekijken
 $gekozen = null;
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $stmt = db()->prepare("SELECT * FROM contact_messages WHERE id = ?");
@@ -73,17 +72,17 @@ $ongelezen = db()->query("SELECT COUNT(*) FROM contact_messages WHERE gelezen = 
         </div>
         <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
             <a href="mailto:<?= h($gekozen['email']) ?>?subject=Re: <?= urlencode($gekozen['onderwerp']) ?>" class="btn btn-primary">
-                ✉ Beantwoorden
+                 Beantwoorden
             </a>
             <a href="?verwijder=<?= $gekozen['id'] ?>" class="btn btn-secondary js-verwijder"
                 data-bevestig="Dit bericht definitief verwijderen?">
-                🗑 Verwijderen
+                 Verwijderen
             </a>
         </div>
     </div>
 <?php endif; ?>
 
-<!-- Lijst -->
+
 <div class="admin-tabel-wrap">
     <table class="admin-tabel">
         <thead>
@@ -101,7 +100,7 @@ $ongelezen = db()->query("SELECT COUNT(*) FROM contact_messages WHERE gelezen = 
                     <tr style="<?= !$msg['gelezen'] ? 'background:var(--color-warning-soft);font-weight:500;' : '' ?>">
                         <td>
                             <span class="badge <?= $msg['gelezen'] ? 'badge-grijs' : 'badge-rood' ?>">
-                                <?= $msg['gelezen'] ? 'Gelezen' : '● Nieuw' ?>
+                                <?= $msg['gelezen'] ? 'Gelezen' : ' Nieuw' ?>
                             </span>
                         </td>
                         <td><?= h($msg['naam']) ?></td>
