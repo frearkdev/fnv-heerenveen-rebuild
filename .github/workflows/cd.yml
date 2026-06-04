@@ -75,7 +75,7 @@ jobs:
           overwrite: true
 
       - name: Deploy over SSH
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@v1.2.5
         env:
           APP_IMAGE: ${{ needs.build-and-push.outputs.image_ref }}
         with:
