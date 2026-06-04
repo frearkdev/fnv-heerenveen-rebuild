@@ -23,19 +23,15 @@ $recentContact = db()->query("SELECT * FROM contact_messages ORDER BY created_at
 
 <div class="dash-stats">
     <div class="stat-kaart">
-        <div class="stat-icoon stat-icoon--rood"></div>
         <div><strong><?= $stats['nieuws'] ?></strong><span>Nieuwsberichten</span></div>
     </div>
     <div class="stat-kaart">
-        <div class="stat-icoon stat-icoon--blauw"></div>
         <div><strong><?= $stats['agenda'] ?></strong><span>Aankomende events</span></div>
     </div>
     <div class="stat-kaart">
-        <div class="stat-icoon stat-icoon--groen"></div>
         <div><strong><?= $stats['paginas'] ?></strong><span>Pagina's</span></div>
     </div>
     <div class="stat-kaart">
-        <div class="stat-icoon stat-icoon--geel"></div>
         <div><strong><?= $stats['berichten'] ?></strong><span>Ongelezen berichten</span></div>
     </div>
 </div>
@@ -44,22 +40,18 @@ $recentContact = db()->query("SELECT * FROM contact_messages ORDER BY created_at
 <h2 class="admin-h1" style="font-size:1.15rem;margin-bottom:1rem;">Snelle acties</h2>
 <div class="dash-acties">
     <a href="<?= SITE_URL ?>/admin/nieuws-form.php" class="actie-kaart">
-        <span>✏️</span>
         <strong>Nieuw artikel</strong>
         <span>Schrijf en publiceer nieuws</span>
     </a>
     <a href="<?= SITE_URL ?>/admin/agenda.php" class="actie-kaart">
-        <span>📅</span>
         <strong>Agenda toevoegen</strong>
         <span>Plan een evenement</span>
     </a>
     <a href="<?= SITE_URL ?>/admin/paginas.php" class="actie-kaart">
-        <span>📝</span>
         <strong>Pagina bewerken</strong>
         <span>Wijzig website-inhoud</span>
     </a>
     <a href="<?= SITE_URL ?>/admin/berichten.php" class="actie-kaart">
-        <span>💬</span>
         <strong>Contactberichten</strong>
         <span>Bekijk inkomende vragen</span>
     </a>
