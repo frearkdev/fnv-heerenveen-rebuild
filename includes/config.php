@@ -1,4 +1,5 @@
 <?php
+ob_start();
 
 function env(string $key, string $default = ''): string
 {
@@ -118,6 +119,9 @@ function formatDate(string $date): string
 
 function redirect(string $url): void
 {
+    while (ob_get_level() > 0) {
+        ob_end_clean();
+    }
     header("Location: $url");
     exit;
 }
