@@ -40,7 +40,7 @@ require_once __DIR__ . '/includes/header.php';
                         <?php if ($item['tijdstip']): ?><span class="agenda-item__tijd"><?= h($item['tijdstip']) ?></span><?php endif; ?>
                     </div>
                     <h3><?= h($item['titel']) ?></h3>
-                    <?php if ($item['locatie']): ?><p class="agenda-item__locatie">📍 <?= h($item['locatie']) ?></p><?php endif; ?>
+                    <?php if ($item['locatie']): ?><p class="agenda-item__locatie"> <?= h($item['locatie']) ?></p><?php endif; ?>
                     <?php if ($item['beschrijving']): ?><p class="agenda-item__beschrijving"><?= h($item['beschrijving']) ?></p><?php endif; ?>
                     <?php if ($item['aanmelding_url']): ?>
                     <a href="<?= h($item['aanmelding_url']) ?>" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:.6rem;font-size:.82rem;padding:.4rem .9rem;">Aanmelden →</a>
