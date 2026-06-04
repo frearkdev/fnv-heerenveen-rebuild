@@ -5,8 +5,7 @@ $pageTitle = 'Contact';
 $succes = $fout = '';
 $form = ['naam' => '', 'email' => '', 'telefoon' => '', 'onderwerp' => '', 'bericht' => ''];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Invullen vanuit POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
     foreach ($form as $key => $_) {
         $form[$key] = trim($_POST[$key] ?? '');
     }
@@ -23,7 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = db()->prepare("INSERT INTO contact_messages (naam, email, telefoon, onderwerp, bericht) VALUES (?,?,?,?,?)");
         $stmt->execute([$form['naam'], $form['email'], $form['telefoon'], $form['onderwerp'], $form['bericht']]);
 
-        // Optioneel: e-mail sturen
         $aan      = ADMIN_EMAIL;
         $onderwerp = 'Contactformulier: ' . $form['onderwerp'];
         $tekst    = "Van: {$form['naam']} ({$form['email']})\nTelefoon: " . ($form['telefoon'] ?: 'niet opgegeven') . "\n\nBericht:\n{$form['bericht']}";
@@ -123,7 +121,7 @@ require_once __DIR__ . '/includes/header.php';
             </div>
 
             <div class="info-blok">
-                <h4>📅 Spreekuur</h4>
+                <h4>Spreekuur</h4>
                 <p style="font-size:.88rem;color:var(--grijs-50);margin-bottom:1rem;">Elke maand gratis spreekuur op meerdere locaties. Geen afspraak nodig!</p>
                 <a href="<?= SITE_URL ?>/agenda.php" class="btn btn-secondary w-100">Bekijk agenda</a>
             </div>
@@ -131,7 +129,7 @@ require_once __DIR__ . '/includes/header.php';
             <div class="info-blok info-blok--rood">
                 <h4>Spoed?</h4>
                 <p style="font-size:.88rem;">Bij dringende arbeidsrechtelijke kwesties of aankomend ontslag kunt u direct bellen.</p>
-                <a href="tel:0513000000" class="btn btn-white w-100" style="margin-top:.9rem;">📞 Bel ons nu</a>
+                <a href="tel:0513000000" class="btn btn-white w-100" style="margin-top:.9rem;">Bel ons nu</a>
             </div>
         </aside>
     </div>

@@ -21,10 +21,10 @@ $adminUser = $adminUser->fetch();
 <body>
     <div class="admin-layout">
 
-        <!-- Overlay mobiel -->
+
         <div class="admin-overlay" id="adminOverlay"></div>
 
-        <!-- Zijbalk -->
+
         <aside class="admin-sidebar" id="adminSidebar">
             <div class="admin-sidebar__logo">
                 <img src="<?= SITE_URL ?>/assets/img/lokaal-fnv-logo-fixed.png" alt="Lokaal FNV" class="admin-sidebar__logo-image" loading="eager" decoding="async">
@@ -56,7 +56,7 @@ $adminUser = $adminUser->fetch();
             </div>
         </aside>
 
-        <!-- Hoofd inhoud -->
+
         <div class="admin-hoofd">
             <header class="admin-topbar">
                 <button class="hamburger" id="adminHamburger" aria-label="Menu">

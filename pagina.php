@@ -32,7 +32,7 @@ $metaDesc  = $pagina['meta_description'] ?? '';
 <section class="sectie">
     <div class="container">
         <div style="max-width:800px;" class="pagina-inhoud">
-            <?= $pagina['content'] /* Vertrouwde CMS HTML */ ?>
+            <?= $pagina['content'] ?>
         </div>
     </div>
 </section>

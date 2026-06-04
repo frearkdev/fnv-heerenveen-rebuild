@@ -7,7 +7,6 @@ $isNieuw = $id === null;
 $fout   = '';
 $succes = '';
 
-// Bestaand bericht laden
 $item = [
     'title' => '', 'excerpt' => '', 'content' => '', 'image' => '',
     'category' => '', 'published' => 0, 'published_at' => ''
@@ -26,7 +25,6 @@ if (!$isNieuw) {
     }
 }
 
-// Opslaan
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title       = trim($_POST['title'] ?? '');
     $excerpt     = trim($_POST['excerpt'] ?? '');
@@ -36,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $published   = isset($_POST['published']) ? 1 : 0;
     $publishedAt = $_POST['published_at'] ? date('Y-m-d H:i:s', strtotime($_POST['published_at'])) : date('Y-m-d H:i:s');
 
-    // Validatie
     if (strlen($title) < 3)   $fout = 'Vul een titel in (minimaal 3 tekens).';
     if (strlen($excerpt) < 5) $fout = 'Vul een samenvatting in.';
     if (strlen($content) < 5) $fout = 'Vul de inhoud in.';
@@ -46,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $slugFinal = $slugBase;
 
         if ($isNieuw) {
-            // Unieke slug
+           
             $i = 1;
             while (db()->prepare("SELECT id FROM news WHERE slug = ?")->execute([$slugFinal]) &&
                    db()->query("SELECT id FROM news WHERE slug = '$slugFinal'")->fetchColumn()) {
@@ -69,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($fout) {
-        // Bewaar invoer
+        
         $item = array_merge($item, [
             'title' => $title, 'excerpt' => $excerpt, 'content' => $content,
             'image' => $image, 'category' => $category, 'published' => $published,
@@ -95,7 +92,7 @@ $categorieen = ['Cao', 'Dienstverlening', 'Belasting', 'Arbeidsmarkt', 'Nieuws',
 <form method="POST">
     <div style="display:grid;grid-template-columns:1fr 280px;gap:1.5rem;align-items:start;">
 
-        <!-- Hoofd inhoud -->
+      
         <div>
             <div class="admin-kaart">
                 <div class="form-group">
@@ -118,7 +115,7 @@ $categorieen = ['Cao', 'Dienstverlening', 'Belasting', 'Arbeidsmarkt', 'Nieuws',
             </div>
         </div>
 
-        <!-- Zijbalk -->
+       
         <aside>
             <div class="admin-kaart">
                 <div class="admin-kaart__titel">Publiceren</div>

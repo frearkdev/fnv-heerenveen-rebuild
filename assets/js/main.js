@@ -1,8 +1,5 @@
-// FNV Heerenveen – Hoofd JavaScript
-
 document.addEventListener('DOMContentLoaded', function () {
 
-    // ---- Sticky header schaduw ----
     const header = document.getElementById('header');
     if (header) {
         window.addEventListener('scroll', () => {
@@ -10,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ---- Hamburger menu ----
     const hamburger   = document.getElementById('hamburger');
     const mobielMenu  = document.getElementById('mobielMenu');
     if (hamburger && mobielMenu) {
@@ -21,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ---- Zoekbalk toggle ----
     const zoekToggle = document.getElementById('zoekToggle');
     const zoekbalk   = document.getElementById('zoekbalk');
     if (zoekToggle && zoekbalk) {
@@ -35,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ---- Admin sidebar (mobiel) ----
     const adminHamburger = document.getElementById('adminHamburger');
     const adminSidebar   = document.querySelector('.admin-sidebar');
     const adminOverlay   = document.getElementById('adminOverlay');
@@ -52,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // ---- Nieuws categorie filter ----
     const filterCats = document.querySelectorAll('.filter-cat');
     filterCats.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -66,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // ---- Contactformulier client-side validatie ----
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
@@ -85,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ---- Teller animatie voor stats ----
     const stats = document.querySelectorAll('.js-teller');
     if (stats.length) {
         const observer = new IntersectionObserver((entries) => {
@@ -107,7 +98,6 @@ document.addEventListener('DOMContentLoaded', function () {
         stats.forEach(el => observer.observe(el));
     }
 
-    // ---- Upload zone drag-and-drop ----
     const uploadZone = document.getElementById('uploadZone');
     if (uploadZone) {
         ['dragover', 'dragenter'].forEach(evt => {
@@ -121,7 +111,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ---- Bevestiging verwijderen ----
     document.querySelectorAll('.js-verwijder').forEach(btn => {
         btn.addEventListener('click', function (e) {
             if (!confirm(this.dataset.bevestig || 'Weet u zeker dat u dit item wilt verwijderen?')) {
@@ -130,7 +119,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // ---- Auto-verberg flash berichten ----
     document.querySelectorAll('.alert').forEach(alert => {
         setTimeout(() => {
             alert.style.transition = 'opacity .5s ease';
@@ -139,7 +127,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 5000);
     });
 
-    // ---- Karakter teller voor textarea's ----
     document.querySelectorAll('[data-max]').forEach(el => {
         const max     = parseInt(el.dataset.max, 10);
         const counter = document.querySelector(`[data-teller="${el.id}"]`);

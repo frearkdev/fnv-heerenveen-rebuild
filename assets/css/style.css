@@ -1,10 +1,3 @@
-/* ================================================
-   FNV Heerenveen – Hoofdstijlen
-   Font: Barlow Condensed (koppen) + Barlow (tekst)
-   Kleur: Lokaal FNV blauw/groen tokens
-   ================================================ */
-
-/* ---- Variabelen ---- */
 :root {
   --color-primary: #0897dd;
   --color-primary-dark: #067bb5;
@@ -67,7 +60,7 @@
   --container: 1200px;
 }
 
-/* ---- Reset ---- */
+
 *,
 *::before,
 *::after {
@@ -114,7 +107,7 @@ p:last-child {
   margin-bottom: 0;
 }
 
-/* ---- Typografie ---- */
+
 h1,
 h2,
 h3,
@@ -141,14 +134,14 @@ h4 {
   font-weight: 600;
 }
 
-/* ---- Container ---- */
+
 .container {
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
-/* ---- Knoppen ---- */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -198,7 +191,7 @@ h4 {
   cursor: not-allowed;
 }
 
-/* ---- Formulieren ---- */
+
 .form-group {
   margin-bottom: 1.1rem;
 }
@@ -238,7 +231,7 @@ h4 {
   margin-top: 0.3rem;
 }
 
-/* ---- Alerts ---- */
+
 .alert {
   padding: 0.9rem 1.1rem;
   border-radius: var(--radius);
@@ -262,7 +255,7 @@ h4 {
   border-left: 4px solid var(--color-primary);
 }
 
-/* ---- Badge ---- */
+
 .badge {
   display: inline-block;
   padding: 0.18rem 0.65rem;
@@ -289,7 +282,7 @@ h4 {
   color: var(--color-primary-dark);
 }
 
-/* ---- Spinner ---- */
+
 .spinner {
   width: 36px;
   height: 36px;
@@ -305,7 +298,7 @@ h4 {
   }
 }
 
-/* ---- Secties ---- */
+
 .sectie {
   padding: 5rem 0;
 }
@@ -328,7 +321,7 @@ h4 {
   margin: 0 auto;
 }
 
-/* ---- Paginakop ---- */
+
 .paginakop {
   background: var(--rood);
   color: var(--wit);
@@ -368,9 +361,7 @@ h4 {
   color: var(--wit);
 }
 
-/* ================================================
-   TOPBAR
-   ================================================ */
+
 .topbar {
   background: var(--color-topbar-bg);
   color: var(--color-topbar-text);
@@ -395,9 +386,7 @@ h4 {
   color: var(--wit);
 }
 
-/* ================================================
-   HEADER
-   ================================================ */
+
 .header {
   position: sticky;
   top: 0;
@@ -417,7 +406,7 @@ h4 {
   gap: 1rem;
 }
 
-/* Logo */
+
 .logo {
   display: flex;
   margin-top: -12px;
@@ -448,7 +437,7 @@ h4 {
   color: var(--grijs-50);
 }
 
-/* Nav */
+
 .nav {
   display: flex;
   justify-self: center;
@@ -485,7 +474,7 @@ h4 {
   background: var(--rood-dark) !important;
 }
 
-/* Knoppen acties */
+
 .header__acties {
   display: flex;
   justify-self: end;
@@ -506,7 +495,7 @@ h4 {
   color: var(--rood);
 }
 
-/* Hamburger */
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -534,7 +523,7 @@ h4 {
   transform: rotate(-45deg) translate(4px, -4px);
 }
 
-/* Zoekbalk */
+
 .zoekbalk {
   background: var(--grijs-95);
   border-top: 1px solid var(--border);
@@ -548,7 +537,7 @@ h4 {
   flex: 1;
 }
 
-/* Mobiel menu */
+
 .mobiel-menu {
   display: none;
   flex-direction: column;
@@ -573,9 +562,7 @@ h4 {
   color: var(--rood);
 }
 
-/* ================================================
-   HOMEPAGE – HERO
-   ================================================ */
+
 .hero {
   background: linear-gradient(
     120deg,
@@ -674,9 +661,7 @@ h4 {
   color: var(--grijs-50);
 }
 
-/* ================================================
-   DIENSTEN GRID
-   ================================================ */
+
 .diensten-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -712,9 +697,7 @@ h4 {
   margin: 0;
 }
 
-/* ================================================
-   NIEUWS KAARTEN
-   ================================================ */
+
 .nieuws-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -783,9 +766,7 @@ h4 {
   margin-top: auto;
 }
 
-/* ================================================
-   AGENDA
-   ================================================ */
+
 .agenda-lijst {
   display: flex;
   flex-direction: column;
@@ -854,9 +835,7 @@ h4 {
   margin: 0;
 }
 
-/* ================================================
-   CTA SECTIE
-   ================================================ */
+
 .cta {
   background: var(--rood);
   padding: 4.5rem 0;
@@ -885,9 +864,7 @@ h4 {
   flex-wrap: wrap;
 }
 
-/* ================================================
-   CONTACT
-   ================================================ */
+
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 340px;
@@ -960,9 +937,7 @@ h4 {
   font-weight: 500;
 }
 
-/* ================================================
-   ARTIKEL
-   ================================================ */
+
 .artikel-layout {
   display: grid;
   grid-template-columns: 1fr 300px;
@@ -1003,9 +978,7 @@ h4 {
   margin-bottom: 1rem;
 }
 
-/* ================================================
-   NIEUWS OVERZICHT
-   ================================================ */
+
 .filter-balk {
   display: flex;
   flex-direction: column;
@@ -1037,7 +1010,6 @@ h4 {
   border-color: var(--rood);
 }
 
-/* Paginering */
 .paginering {
   display: flex;
   justify-content: center;
@@ -1065,9 +1037,7 @@ h4 {
   border-color: var(--rood);
 }
 
-/* ================================================
-   ADMIN LAYOUT
-   ================================================ */
+
 .admin-layout {
   display: flex;
   min-height: 100vh;
@@ -1207,7 +1177,7 @@ h4 {
   margin-bottom: 1.75rem;
 }
 
-/* Admin kaarten */
+
 .admin-kaart {
   background: var(--wit);
   border-radius: var(--radius-lg);
@@ -1226,7 +1196,7 @@ h4 {
   letter-spacing: 0.04em;
 }
 
-/* Admin tabel */
+
 .admin-tabel-wrap {
   overflow-x: auto;
 }
@@ -1278,7 +1248,7 @@ h4 {
   padding: 2.5rem;
 }
 
-/* Dashboard stats */
+
 .dash-stats {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
@@ -1366,7 +1336,7 @@ h4 {
   color: var(--grijs-50);
 }
 
-/* Toggle schakelaar */
+
 .schakelaar {
   display: flex;
   align-items: center;
@@ -1406,7 +1376,7 @@ h4 {
   transform: translateX(20px);
 }
 
-/* Pagina's layout */
+
 .paginas-layout {
   display: grid;
   grid-template-columns: 250px 1fr;
@@ -1453,7 +1423,7 @@ h4 {
   box-shadow: var(--shadow-sm);
 }
 
-/* Media grid */
+
 .media-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -1503,7 +1473,7 @@ h4 {
   background: var(--grijs-90);
 }
 
-/* Upload zone */
+
 .upload-zone {
   border: 2px dashed var(--border);
   border-radius: var(--radius-lg);
@@ -1526,7 +1496,7 @@ h4 {
   color: var(--rood);
 }
 
-/* Login pagina */
+
 .login-pagina {
   min-height: 100vh;
   background: linear-gradient(
@@ -1592,7 +1562,7 @@ h4 {
   color: var(--grijs-50);
 }
 
-/* 404 */
+
 .not-found {
   min-height: 60vh;
   display: flex;
@@ -1609,9 +1579,7 @@ h4 {
   margin-bottom: 1rem;
 }
 
-/* ================================================
-   FOOTER
-   ================================================ */
+
 .footer {
   margin-top: 3rem;
   border-top: 1px solid var(--border);
@@ -1723,9 +1691,7 @@ h4 {
   color: var(--wit);
 }
 
-/* ================================================
-   RESPONSIVE
-   ================================================ */
+
 @media (max-width: 900px) {
   .nav {
     display: none;
@@ -1808,7 +1774,7 @@ h4 {
   }
 }
 
-/* Utilities */
+
 .text-center {
   text-align: center;
 }

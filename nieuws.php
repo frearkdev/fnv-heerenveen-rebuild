@@ -8,7 +8,7 @@ $pagina    = max(1, (int)($_GET['p'] ?? 1));
 $perPagina = 9;
 $offset    = ($pagina - 1) * $perPagina;
 
-// Query bouwen
+// Query 
 $where  = ['published = 1'];
 $params = [];
 if ($zoek) {
@@ -91,7 +91,7 @@ require_once __DIR__ . '/includes/header.php';
         </div>
         <?php else: ?>
         <div class="text-center" style="padding:4rem 0;color:var(--grijs-50);">
-            <p style="font-size:2rem;margin-bottom:1rem;">📰</p>
+            <p style="font-size:2rem;margin-bottom:1rem;"></p>
             <h3>Geen berichten gevonden</h3>
             <p>Probeer een andere zoekterm of categorie.</p>
             <a href="<?= SITE_URL ?>/nieuws.php" class="btn btn-primary mt-2">Alle berichten</a>

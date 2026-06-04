@@ -3,11 +3,11 @@ require_once __DIR__ . '/includes/config.php';
 
 $pageTitle = 'Vakbond voor werkenden in Heerenveen';
 
-// Haal recente nieuws op
+// nieuws ophalen
 $stmt = db()->query("SELECT * FROM news WHERE published = 1 ORDER BY published_at DESC LIMIT 3");
 $nieuws = $stmt->fetchAll();
 
-// Haal aankomende agenda op
+// agenda ophalen
 $stmt = db()->query("SELECT * FROM agenda WHERE datum >= CURDATE() ORDER BY datum ASC LIMIT 3");
 $agenda = $stmt->fetchAll();
 
@@ -60,12 +60,12 @@ require_once __DIR__ . '/includes/header.php';
         <div class="diensten-grid">
             <?php
             $diensten = [
-                ['⚖️', 'Juridische hulp', 'Onze juristen helpen u bij arbeidsrechtelijke geschillen, ontslag en loonconflicten.'],
-                ['🧾', 'Belastingaangifte', 'Elk jaar helpen onze vrijwilligers leden gratis met hun belastingaangifte.'],
-                ['🤝', 'Spreekuur', 'Maandelijks gratis spreekuur op meerdere locaties in de regio Heerenveen.'],
-                ['📋', 'Cao-informatie', 'Wij houden u op de hoogte van cao-onderhandelingen en uw rechten als werknemer.'],
-                ['💶', 'WW & uitkering', 'Begeleiding bij WW-aanvraag, bezwaar en begeleiding naar werk.'],
-                ['❤️', 'Pensioen', 'Advies over pensioenopbouw en uw rechten als gepensioneerde.'],
+                ['', 'Juridische hulp', 'Onze juristen helpen u bij arbeidsrechtelijke geschillen, ontslag en loonconflicten.'],
+                ['', 'Belastingaangifte', 'Elk jaar helpen onze vrijwilligers leden gratis met hun belastingaangifte.'],
+                ['', 'Spreekuur', 'Maandelijks gratis spreekuur op meerdere locaties in de regio Heerenveen.'],
+                ['', 'Cao-informatie', 'Wij houden u op de hoogte van cao-onderhandelingen en uw rechten als werknemer.'],
+                ['', 'WW & uitkering', 'Begeleiding bij WW-aanvraag, bezwaar en begeleiding naar werk.'],
+                ['', 'Pensioen', 'Advies over pensioenopbouw en uw rechten als gepensioneerde.'],
             ];
             foreach ($diensten as $d): ?>
                 <div class="dienst">

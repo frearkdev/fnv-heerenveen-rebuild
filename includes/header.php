@@ -1,5 +1,4 @@
 <?php
-// Bepaal huidige pagina voor actieve navigatie
 $currentPage = basename($_SERVER['PHP_SELF'], '.php');
 $currentPath = $_SERVER['REQUEST_URI'];
 ?>
