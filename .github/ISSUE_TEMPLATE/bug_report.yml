@@ -1,0 +1,36 @@
+name: Bug report
+description: Report a reproducible issue
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Please provide enough detail to reproduce and fix the issue quickly."
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened?
+      description: Expected behavior and actual behavior.
+      placeholder: "When I go to /admin/login.php I expect..., but..."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "local docker, staging, production"
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs or screenshots
+      render: shell

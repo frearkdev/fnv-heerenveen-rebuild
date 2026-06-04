@@ -1,0 +1,11 @@
+.git
+.github
+.idea
+.vscode
+.env
+.env.\*
+_.log
+node_modules
+vendor
+docker-compose_.yml
+README.md

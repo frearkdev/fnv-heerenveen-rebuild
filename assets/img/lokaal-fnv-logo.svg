@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 230" role="img" aria-labelledby="title desc">
+  <title id="title">Lokaal FNV logo</title>
+  <desc id="desc">Lokaal FNV woordmerk met groen Lokaal en blauw FNV</desc>
+
+  <defs>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#56B9E8"/>
+      <stop offset="100%" stop-color="#0897DD"/>
+    </linearGradient>
+  </defs>
+
+  <polygon points="0,0 620,0 605,58 0,58" fill="url(#blue)"/>
+
+  <rect x="15" y="60" width="380" height="145" rx="10" fill="#FFFFFF"/>
+  <text x="30" y="160" font-family="Barlow Condensed, Arial, sans-serif" font-size="108" font-weight="700" fill="#7DBA1E">Lokaal</text>
+  <rect x="28" y="186" width="335" height="10" fill="#7DBA1E"/>
+
+  <g transform="translate(370,75) skewX(-10)">
+    <rect x="0" y="0" width="110" height="150" rx="8" fill="url(#blue)"/>
+    <rect x="120" y="0" width="110" height="150" rx="8" fill="url(#blue)"/>
+    <rect x="240" y="0" width="110" height="150" rx="8" fill="url(#blue)"/>
+    <text x="24" y="103" font-family="Barlow Condensed, Arial, sans-serif" font-size="94" font-weight="800" fill="#FFFFFF" transform="skewX(10)">FNV</text>
+  </g>
+</svg>

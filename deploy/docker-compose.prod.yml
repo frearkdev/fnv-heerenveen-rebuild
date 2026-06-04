@@ -1,0 +1,49 @@
+services:
+  app:
+    image: ${APP_IMAGE:?Set APP_IMAGE in .env}
+    container_name: fnv_app
+    ports:
+      - "${APP_PORT:-8080}:80"
+    environment:
+      APP_ENV: production
+      SITE_URL: ${SITE_URL:?Set SITE_URL in .env}
+      SITE_NAME: ${SITE_NAME:-FNV Heerenveen}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-info@fnvheerenveen.nl}
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: ${DB_NAME:-fnv_heerenveen}
+      DB_USER: ${DB_USER:-fnv}
+      DB_PASS: ${DB_PASS:?Set DB_PASS in .env}
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: mysql:8.4
+    container_name: fnv_db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD in .env}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-fnv_heerenveen}
+      MYSQL_USER: ${MYSQL_USER:-fnv}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Set MYSQL_PASSWORD in .env}
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-uroot",
+          "-p${MYSQL_ROOT_PASSWORD}",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+volumes:
+  db_data:

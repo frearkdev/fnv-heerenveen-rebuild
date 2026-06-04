@@ -1,0 +1,63 @@
+### OS files
+.DS_Store
+Thumbs.db
+
+### Logs and databases
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+
+### Environment files
+.env
+.env.local
+.env.*.local
+.env.backup
+
+### Composer
+/vendor/
+/composer.phar
+
+### Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+### Build directories
+/dist/
+/build/
+
+### Temporary files
+/tmp/
+/temp/
+*.cache
+
+### Uploaded / runtime storage (adjust if you track uploads)
+/uploads/
+/storage/
+
+### Docker
+docker-compose.override.yml
+*.env.docker
+
+### IDEs and editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+### Tests / coverage
+/coverage/
+phpunit.xml
+phpunit.xml.dist
+
+### Misc
+*.swp
+*.lock
+.env
+.env.*
+!.env.example
+logs/
+*.log
+.DS_Store
+Thumbs.db
