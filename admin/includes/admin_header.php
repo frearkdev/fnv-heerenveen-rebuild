@@ -62,6 +62,6 @@ $adminUser = $adminUser->fetch();
                 <button class="hamburger" id="adminHamburger" aria-label="Menu">
                     <span></span><span></span><span></span>
                 </button>
-                <span class="admin-topbar__naam">👤 <?= h($adminUser['name'] ?? '') ?></span>
+                <span class="admin-topbar__naam"> <?= h($adminUser['name'] ?? '') ?></span>
             </header>
             <div class="admin-inhoud">
