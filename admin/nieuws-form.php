@@ -104,7 +104,7 @@ $categorieen = ['Cao', 'Dienstverlening', 'Belasting', 'Arbeidsmarkt', 'Nieuws',
                     <textarea id="excerpt" name="excerpt" class="form-textarea" rows="3"
                         placeholder="Korte samenvatting (max. 500 tekens)"
                         data-max="500" required><?= h($item['excerpt']) ?></textarea>
-                    <p class="form-small"><span data-teller="excerpt">0</span>/500 tekens</p>
+                    <p class="form-small"><span data-teller="excerpt">0</span> tekens</p>
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="content">Inhoud * <small style="font-weight:400;color:var(--grijs-50);">(HTML toegestaan)</small></label>
