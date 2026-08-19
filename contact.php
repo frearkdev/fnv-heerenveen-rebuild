@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $onderwerp = 'Contactformulier: ' . $form['onderwerp'];
         $tekst    = "Van: {$form['naam']} ({$form['email']})\nTelefoon: " . ($form['telefoon'] ?: 'niet opgegeven') . "\n\nBericht:\n{$form['bericht']}";
         $headers  = "From: noreply@fnvheerenveen.nl\r\nReply-To: {$form['email']}\r\nContent-Type: text/plain; charset=utf-8";
-        @mail($aan, $onderwerp, $tekst, $headers);
+        mail($aan, $onderwerp, $tekst, $headers);
 
         $succes = 'Uw bericht is ontvangen! We nemen zo spoedig mogelijk contact met u op.';
         $form   = ['naam' => '', 'email' => '', 'telefoon' => '', 'onderwerp' => '', 'bericht' => ''];
