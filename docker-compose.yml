@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   app:
     build:
@@ -24,6 +26,8 @@ services:
       db:
         condition: service_healthy
     restart: unless-stopped
+    networks:
+      - fnv-network
 
   db:
     image: mysql:8.4
@@ -53,6 +57,8 @@ services:
       timeout: 5s
       retries: 10
     restart: unless-stopped
+    networks:
+      - fnv-network
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:5
@@ -68,6 +74,12 @@ services:
       db:
         condition: service_healthy
     restart: unless-stopped
+    networks:
+      - fnv-network
 
 volumes:
   db_data:
+
+networks:
+  fnv-network:
+    driver: bridge

@@ -43,10 +43,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $slugFinal = $slugBase;
 
         if ($isNieuw) {
-           
             $i = 1;
-            while (db()->prepare("SELECT id FROM news WHERE slug = ?")->execute([$slugFinal]) &&
-                   db()->query("SELECT id FROM news WHERE slug = '$slugFinal'")->fetchColumn()) {
+            $slugCheck = db()->prepare("SELECT id FROM news WHERE slug = ?");
+            while ($slugCheck->execute([$slugFinal]) && $slugCheck->fetchColumn()) {
                 $slugFinal = $slugBase . '-' . $i++;
             }
             $stmt = db()->prepare("INSERT INTO news (title, slug, excerpt, content, image, category, published, published_at) VALUES (?,?,?,?,?,?,?,?)");

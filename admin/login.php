@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$email]);
         $user = $stmt->fetch();
 
-        if ($user && (password_verify($wachtwoord, $user['password']) || $wachtwoord === 'Admin@FNV2024!')) {
+        if ($user && password_verify($wachtwoord, $user['password'])) {
             $_SESSION['admin_id']   = $user['id'];
             $_SESSION['admin_naam'] = $user['name'];
             redirect(SITE_URL . '/admin/dashboard.php');
@@ -73,9 +73,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <a href="<?= SITE_URL ?>/index.php" class="login-terug">← Terug naar de website</a>
 
-            <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.75rem;color:var(--grijs-50);text-align:center;">
-                Demo: admin@fnvheerenveen.nl / Admin@FNV2024!
-            </div>
         </div>
     </div>
 
